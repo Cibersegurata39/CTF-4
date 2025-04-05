@@ -6,6 +6,7 @@
   <img src="https://img.shields.io/badge/-Netcat-F5455C?style=for-the-badge&logo=netcat&logoColor=white" />
   <img src="https://img.shields.io/badge/-python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
   chisel
+  Proxychains
   <img src="https://img.shields.io/badge/-Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
 </div>
 ## Objetivo
@@ -64,8 +65,10 @@ También lo lanzo en la máquina intermedia, como cliente, indicándole la direc
 
 Ahora la máquina anfitriona, por medio del puerto 3456, tiene visibilidad de las posibles conexiones de la máquina intermedia, como podría ser la máquina final.
 
-Para hacer un barrido de IPs con el objetivo de encontrar la última máquina debo utilizar la herramienta **Proxychains** para crear un túnel, indicándole IP  ypuerto creados en chisel. Esto lo modifico desde el archivo de configuración.
-sudo nano /etc/proxychains4.conf
-Descomento Dynamic_chain y comento static_chain y añado ‘socks5 127.0.0.1 1080’ al final
+Para hacer un barrido de IPs con el objetivo de encontrar la última máquina, debo utilizar la herramienta **Proxychains** para crear un túnel, indicándole la dirección IP y el puerto creados en *Chisel* (se muestra en la *shell* de la máquina atacante después de realizar la conexión). Esto se modifica desde el archivo de configuración.
+
+<code>sudo nano /etc/proxychains4.conf</code>
+
+Se descomenta la línea que contiene *Dynamic_chain* y se comenta la línea que contiene *static_chain*. Además, al final del archivo se añade ‘socks5 127.0.0.1 1080’.
 
 ![image](https://github.com/user-attachments/assets/1410a5c7-1d8a-4d02-bbee-368ca7cb7b7b)
