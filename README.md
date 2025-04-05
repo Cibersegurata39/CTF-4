@@ -47,3 +47,4 @@ Para **pivotar** entre máquinas, es necesario descargar el programa **Chisel** 
 
 ![image](https://github.com/user-attachments/assets/7f85fb6c-c443-49e6-9a1f-174109bea616)
 
+Puesto que que tampoco dispone de los binarios <code>wget</code> o <code>curl</code>, se utiliza un pequeño código *php* para realizar la descarga (archivo descarga.php).
