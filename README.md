@@ -8,6 +8,7 @@
   chisel
   Proxychains
   Crunch
+  Hydra
   <img src="https://img.shields.io/badge/-Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
 </div>
 ## Objetivo
@@ -101,6 +102,16 @@ En tal caso, se va a probar diferentes combinaciones de los caracteres de cada c
 ![image](https://github.com/user-attachments/assets/bb9dd4c4-0072-41ec-b938-97572b8b82ad)
 
 Una vez creado el diccionario 'pwds.txt', se utiliza este para encontrar, por medio de fuerza bruta, la contrasña. Esto es posible gracias a la ayuda de la herramienta **Hydra**. En el comando se indica la IP y el servicio a crackear, el usuario (en este caso, como se va a probar con Pablo, se pasa '-l' en minúscula), la contraseña (puesto que es la que se quiere encontrar, se indica con '-P' en mayúscula). Finalmnente se informa del puerto donde se conectará. Por aclarar, si conoces el usuario o la contraseña, estos se indican con la letra en minúscula. Por contra, si no se conoce se indica con mayúscula.
+
 <code>proxychains hydra 172.18.0.3 ssh -l pablo -P pwds.txt -s 2222</code>
+
+![image](https://github.com/user-attachments/assets/b8957d3e-b8fc-479f-b1d6-8295caf4f3e2)
+
+*Hydra* ha encontrado la contraseña correcta: 'tefeme.!'. Ya sólo queda conectarse via SSH con esta password y buscar la *flag*.
+
+![image](https://github.com/user-attachments/assets/5881e81f-6cee-4265-be5b-4de96ea09c31)
+
+**Flag: 4d8c72671245d9d1b8e03a826db9d5ecead28c8c**
+
 
 
