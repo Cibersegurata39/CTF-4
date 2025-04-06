@@ -1,5 +1,5 @@
 # CTF-4
-*Capture the flag* donde se trabaja el *pivoting* entre máquinas de la misma red, *reverse shell*, escucha de puertos, montaje de un servidor con *Python*.
+*Capture the flag* donde se trabaja el *pivoting* entre máquinas de la misma red, *reverse shell*, escucha de puertos, montaje de un servidor con *Python*, *Crunch*, *Hydra*.
 <div>
   <img src="https://img.shields.io/badge/-Kali-5e8ca8?style=for-the-badge&logo=kalilinux&logoColor=white" />
   <img src="https://img.shields.io/badge/-PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" />
@@ -21,12 +21,13 @@ Explicar la realización del siguiente _Capture the flag_ dentro del mundo educa
 - Poner puertos en escucha.
 - Montar un sevidor fácilmente con *Python*.
 - Montar un diccionario a partir de una secuencia dada de caracteres.
+- Crackear una contraseña.
 
 ## Herramientas utilizadas
 
 - *Kali Linux*.
 - *Pivoting*: *Python3*, *Chisel*, *Proxychains*.
-- Penetración: *Netcat*, *Crunch* . 
+- Penetración: *Netcat*, *Crunch*, *Hydra* . 
 
 ## Steps
 
@@ -89,13 +90,17 @@ Ahora se puede realizar un ataque más centrado en esta máquina y buscar qué p
 
 ![image](https://github.com/user-attachments/assets/241f93d4-06fe-4b98-8ff3-f47a3f37af44)
 
-Se encuentra un servicio *SSH* en el puerto 2222, por lo que se intenta la conexión por medio de *proxychains*. Se encuentra el inconveniente de que ninguna de las contraseñas encontradas en la base de datos no sirven para tener acceso. Igual que en el anterior CTF (CTF-3) se encontró, por medio de *SQLMap*, la tabla con la bandera correspondiente, también se encontró una tabla con diferentes usuarios y contraseñas.
+Se encuentra un servicio *SSH* en el puerto 2222, por lo que se intenta la conexión por medio de *proxychains*. Aparece el inconveniente de que ninguna de las contraseñas encontradas en la base de datos no sirven para tener acceso. Igual que en el anterior CTF (CTF-3) se encontró, por medio de *SQLMap*, la tabla con la bandera correspondiente, también se encontró una tabla con diferentes usuarios y contraseñas.
 
-| Usuario | Contraseña |
-| ------- | ---------- |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-En tal caso, voy a probar diferentes combinaciones de los caracteres de cada contraseña para ver si alguna es la correcta, empezaré con el usuario Pablo pues es el usuario correcto más probable. Para conseguir la permuta de caracteres hago uso de la herramienta Crunch.
+![image](https://github.com/user-attachments/assets/1e9d0fc7-495d-4009-a32f-7a9210c3451b)
+
+En tal caso, se va a probar diferentes combinaciones de los caracteres de cada contraseña para ver si alguna es la correcta, empezando con el usuario Pablo pues es el más probable de éxito. Para conseguir la permuta de caracteres hago uso de la herramienta **Crunch**, la cual creará un diccionario con todas las posibilidades. Indico que las *passwords* generadas tengan una longitud (mínima y máxima) de 8, la contraseña original a partir de la cual se formarán las demás y el nombre del dicionario que se creará.
+
+<code>crunch 8 8 "tefeme\!." -o pwds.txt</code>
+
+![image](https://github.com/user-attachments/assets/bb9dd4c4-0072-41ec-b938-97572b8b82ad)
+
+Una vez creado el diccionario 'pwds.txt', se utiliza este para encontrar, por medio de fuerza bruta, la contrasña. Esto es posible gracias a la ayuda de la herramienta **Hydra**. En el comando se indica la IP y el servicio a crackear, el usuario (en este caso, como se va a probar con Pablo, se pasa '-l' en minúscula), la contraseña (puesto que es la que se quiere encontrar, se indica con '-P' en mayúscula). Finalmnente se informa del puerto donde se conectará. Por aclarar, si conoces el usuario o la contraseña, estos se indican con la letra en minúscula. Por contra, si no se conoce se indica con mayúscula.
+<code>proxychains hydra 172.18.0.3 ssh -l pablo -P pwds.txt -s 2222</code>
+
+
