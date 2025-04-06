@@ -5,10 +5,10 @@
   <img src="https://img.shields.io/badge/-PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" />
   <img src="https://img.shields.io/badge/-Netcat-F5455C?style=for-the-badge&logo=netcat&logoColor=white" />
   <img src="https://img.shields.io/badge/-python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-  chisel
-  Proxychains
-  Crunch
-  Hydra
+  <img src="https://img.shields.io/badge/-chisel-CD1414?style=for-the-badge&logo=chisel&logoColor=white" />
+  <img src="https://img.shields.io/badge/-Proxychains-3EBBDF?style=for-the-badge&logo=proxychains&logoColor=white" />
+  <img src="https://img.shields.io/badge/-Crunch-0080FF?style=for-the-badge&logo=crunch&logoColor=white" />
+  <img src="https://img.shields.io/badge/-Hydra-77B6A8?style=for-the-badge&logo=hydra&logoColor=white" />
   <img src="https://img.shields.io/badge/-Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
 </div>
 ## Objetivo
