@@ -7,6 +7,7 @@
   <img src="https://img.shields.io/badge/-python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
   <img src="https://img.shields.io/badge/-chisel-CD1414?style=for-the-badge&logo=chisel&logoColor=white" />
   <img src="https://img.shields.io/badge/-Proxychains-3EBBDF?style=for-the-badge&logo=proxychains&logoColor=white" />
+  <img src="https://img.shields.io/badge/-nmap-6933FF?style=for-the-badge&logo=nmap&logoColor=white" />
   <img src="https://img.shields.io/badge/-Crunch-0080FF?style=for-the-badge&logo=crunch&logoColor=white" />
   <img src="https://img.shields.io/badge/-Hydra-77B6A8?style=for-the-badge&logo=hydra&logoColor=white" />
   <img src="https://img.shields.io/badge/-Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
@@ -29,6 +30,7 @@ Explicar la realización del siguiente _Capture the flag_ dentro del mundo educa
 
 - *Kali Linux*.
 - *Pivoting*: *Python3*, *Chisel*, *Proxychains*.
+- Enumeración: *Nmap*.
 - Penetración: *Netcat*, *Crunch*, *Hydra*. 
 
 ## Steps
