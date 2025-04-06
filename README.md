@@ -23,6 +23,7 @@ Explicar la realización del siguiente _Capture the flag_ dentro del mundo educa
 - Realizar una *reverse shell* con código *php*.
 - Poner puertos en escucha.
 - Montar un sevidor fácilmente con *Python*.
+- Encontrar una máquina y enumerar sus puertos.
 - Montar un diccionario a partir de una secuencia dada de caracteres.
 - *Crackear* una contraseña.
 
