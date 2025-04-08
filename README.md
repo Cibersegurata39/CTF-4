@@ -10,6 +10,7 @@
   <img src="https://img.shields.io/badge/-nmap-6933FF?style=for-the-badge&logo=nmap&logoColor=white" />
   <img src="https://img.shields.io/badge/-Crunch-0080FF?style=for-the-badge&logo=crunch&logoColor=white" />
   <img src="https://img.shields.io/badge/-Hydra-77B6A8?style=for-the-badge&logo=hydra&logoColor=white" />
+  <img src="https://img.shields.io/badge/-Socat-777BB4?style=for-the-badge&logo=socat&logoColor=white" />
   <img src="https://img.shields.io/badge/-Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
 </div>
 
@@ -30,7 +31,7 @@ Explicar la realización del siguiente _Capture the flag_ dentro del mundo educa
 ## Herramientas utilizadas
 
 - *Kali Linux*.
-- *Pivoting*: *Python3*, *Chisel*, *Proxychains*.
+- *Pivoting*: *Python3*, *Chisel*, *Proxychains*, *Socat*.
 - Enumeración: *Nmap*.
 - Penetración: *Netcat*, *Crunch*, *Hydra*. 
 
@@ -116,5 +117,18 @@ Una vez creado el diccionario 'pwds.txt', se utiliza este para encontrar la cont
 
 **Flag: 4d8c72671245d9d1b8e03a826db9d5ecead28c8c**
 
+###Alternativa Socat
 
+Otra herramienta que permite el *pivoting* y se puede utilizar como alternativa a *Chisel* es **Socat**, la cual si se encuentra en la máquina intermedia. Desde esta se indica el puerto que se pone en escucha y la IP-puerto de la máquina final a la que se pretende conectar.
 
+<code>socat tcp-l:222,fork tcp:172.18.0.3:2222</code>
+
+![image](https://github.com/user-attachments/assets/c658cc35-ef0a-4189-8ffc-eb6c821eb6b0)
+
+De esta manera, desde la máquina atacante se puede conectar váa *ssh* a la máquina intermedia por el puerto que está en escucha. Y este, a su vez, conectar con el puerto de la máquina final indicado. 
+
+<code>ssh pablo@172.18.0.2 -p 222</code>
+
+![image](https://github.com/user-attachments/assets/26da0e19-0014-488e-b7c5-af1c9189a428)
+
+Una vez dentro ya se puede buscar la bandera.
