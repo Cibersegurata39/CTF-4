@@ -117,7 +117,7 @@ Una vez creado el diccionario 'pwds.txt', se utiliza este para encontrar la cont
 
 **Flag: 4d8c72671245d9d1b8e03a826db9d5ecead28c8c**
 
-###Alternativa Socat
+### Alternativa Socat
 
 Otra herramienta que permite el *pivoting* y se puede utilizar como alternativa a *Chisel* es **Socat**, la cual si se encuentra en la máquina intermedia. Desde esta se indica el puerto que se pone en escucha y la IP-puerto de la máquina final a la que se pretende conectar.
 
