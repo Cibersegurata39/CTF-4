@@ -105,7 +105,7 @@ En tal caso, se va a probar diferentes combinaciones de los caracteres de cada c
 
 ![image](https://github.com/user-attachments/assets/bb9dd4c4-0072-41ec-b938-97572b8b82ad)
 
-Una vez creado el diccionario 'pwds.txt', se utiliza este para encontrar la contrasña, por medio de fuerza bruta. Esto es posible gracias a la ayuda de la herramienta **Hydra**. En el comando se indica la IP y el servicio a *crackear*, el usuario (en este caso, como se va a probar con Pablo, se pasa '-l' en minúscula), la contraseña (puesto que es la que se quiere encontrar, se indica con '-P' en mayúscula) y finalmnente se informa del puerto donde se conectará. Por aclarar, si se conoce el usuario o la contraseña, estos se indican con la letra en minúscula. Por contra, si no se conocen se indica con mayúscula.
+Una vez creado el diccionario 'pwds.txt', se utiliza este para encontrar la contraseña, por medio de fuerza bruta. Esto es posible gracias a la ayuda de la herramienta **Hydra**. En el comando se indica la IP y el servicio a *crackear*, el usuario (en este caso, como se va a probar con Pablo, se pasa '-l' en minúscula), la contraseña (puesto que es la que se quiere encontrar, se indica con '-P' en mayúscula) y finalmnente se informa del puerto donde se conectará. Por aclarar, si se conoce el usuario o la contraseña, estos se indican con la letra en minúscula. Por contra, si no se conocen se indica con mayúscula.
 
 <code>proxychains hydra 172.18.0.3 ssh -l pablo -P pwds.txt -s 2222</code>
 
