@@ -59,7 +59,7 @@ Para **pivotar** entre máquinas, es necesario descargar el programa **Chisel** 
 
 ![image](https://github.com/user-attachments/assets/7f85fb6c-c443-49e6-9a1f-174109bea616)
 
-Puesto que tampoco dispone de los binarios <code>wget</code> o <code>curl</code>, se utiliza un pequeño código *php* para realizar la descarga ('descarga_archivo.php'). En el código se indica la dirección donde se encuentra *Chisel* (máquina atacante), así como donde guardarlo (máquina intermedia). Se guarda en la carpeta '/tmp'. pues desde ahí se tienen permisos de ejecución.
+Puesto que tampoco dispone de los binarios <code>wget</code> o <code>curl</code>, se utiliza un pequeño código *php* para realizar la descarga ('descarga_archivo.php'). En el código se indica la dirección donde se encuentra *Chisel* (máquina atacante), así como donde guardarlo (máquina intermedia). Se guarda en la carpeta '/tmp' pues desde ahí se tienen permisos de ejecución.
 
 Una vez descargado y otorgados los permisos de ejecución, lo lanzo desde la máquina anfitriona, como servidor, y pongo en escucha el puerto 3456 (por ejemplo).
 
