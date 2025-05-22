@@ -69,7 +69,7 @@ Una vez descargado y otorgados los permisos de ejecución, lo lanzo desde la má
 
 También lo lanzo en la máquina intermedia, como cliente, indicándole la dirección IP y puerto de la máquina atacante. Además, con ‘R:socks’ indico que me de acceso a todas las IPs/puertos con las que esté conectada la máquina intermedia (conexión con la máquina víctima a la que se pretende conseguir llegar).
 
-<code>. /chisel client 10.0.2.15:3456 R:socks</code>
+<code>./chisel client 10.0.2.15:3456 R:socks</code>
 
 ![image](https://github.com/user-attachments/assets/d88edd57-7d66-4665-a25d-8ea6fcf3f85d)
 
@@ -83,7 +83,7 @@ Se descomenta la línea que contiene *Dynamic_chain* y se comenta la línea que 
 
 ![image](https://github.com/user-attachments/assets/1410a5c7-1d8a-4d02-bbee-368ca7cb7b7b)
 
-Para utilzar ahora este túnel se utiliza el comando *Proxychains* y se lanza un *nmap* para hacer el barrido de IPs con la dirección de la máquina intermedia y así encontrar aquellas máquinas que estén en su misma red. Al utilizar *proxychains* sería como lanzar el *nmap* desde la propia máquina intermedia. Se indica que no haga reconocimiento *ping* y la máquina final es encontrada en la dirección 172.18.0.3.
+Para utilizar ahora este túnel se utiliza el comando *Proxychains* y se lanza un *nmap* para hacer el barrido de IPs con la dirección de la máquina intermedia y así encontrar aquellas máquinas que estén en su misma red. Al utilizar *proxychains* sería como lanzar el *nmap* desde la propia máquina intermedia. Se indica que no haga reconocimiento *ping* y la máquina final es encontrada en la dirección 172.18.0.3.
 
 <code>proxychains nmap 172.18.0.0/24 -Pn</code>
 
